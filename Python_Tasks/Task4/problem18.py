@@ -1,13 +1,22 @@
-# 17 Finding the Percentage
-# https://www.hackerrank.com/challenges/finding-the-percentage/problem
+# 18 Lists
+# https://www.hackerrank.com/challenges/python-lists/problem
 n = int(input())
-students = {}
+list1 = []
 for i in range(n):
-    data = input().split()
-    name = data[0]
-    marks = list(map(float, data[1:]))
-    students[name] = marks
-query_name = input()
-average = sum(students[query_name]) / len(students[query_name])
-print(f"{average:.2f}")
+    c = input().split()
+    if c[0] == "insert":
+        list1.insert(int(c[1]), int(c[2]))
+    elif c[0] == "print":
+        print(list1)
+    elif c[0] == "remove":
+        list1.remove(int(c[1]))
+    elif c[0] == "append":
+        list1.append(int(c[1]))
+    elif c[0] == "sort":
+        list1.sort()
+    elif c[0] == "pop":
+        list1.pop()
+    elif c[0] == "reverse":
+        list1.reverse()
+
 
